@@ -1,6 +1,7 @@
 from sys import argv
 from contextlib import redirect_stdout
-
+from functools import lru_cache
+@lru_cache(maxsize=None)
 def bin_coeff(n , k): 
 	return 1 if k == 0 or k == n else bin_coeff(n-1 , k-1) + bin_coeff(n-1 , k) 
 
